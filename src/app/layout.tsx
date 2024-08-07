@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar";
+import Footer from "@/components/shared/footer";
 
 export const metadata: Metadata = {
   title: "Zamrood | Premium Travel Experiences",
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className="font-albert">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
