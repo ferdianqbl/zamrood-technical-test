@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -66,4 +67,11 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@font-face {
+  font-family: "Signature";
+  font-style: normal;
+  font-display: swap;
+  src: url("/assets/fonts/the-signature/Thesignature.ttf") format("truetype");
 }
