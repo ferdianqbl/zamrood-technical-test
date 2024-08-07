@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Zamrood | Premium Travel Experiences",
   description:
     "Zamrood is a travel company that offers premium travel experiences.",
+  icons: {
+    icon: "/assets/icons/ic-logo-without-title.svg",
+  },
 };
 
 export default function RootLayout({
