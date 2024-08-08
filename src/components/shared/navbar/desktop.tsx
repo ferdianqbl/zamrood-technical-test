@@ -16,7 +16,7 @@ type Props = {
 
 const NavbarDesktop: FC<Props> = ({ scrollY, data }) => {
   const pathname = usePathname();
-  const hash = window && window.location.hash ? window.location.hash : null;
+  const hash = typeof window !== "undefined" ? window.location.hash : undefined;
   return (
     <div className="container hidden lg:flex items-center justify-between">
       <Link href="/" className="block">

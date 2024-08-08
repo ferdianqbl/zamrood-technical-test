@@ -20,7 +20,7 @@ type Props = {
 const NavbarMobile: FC<Props> = ({ scrollY, data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const hash = window && window.location.hash ? window.location.hash : null;
+  const hash = typeof window !== "undefined" ? window.location.hash : undefined;
 
   return (
     <div className="lg:hidden container flex items-center justify-between w-full gap-3">
