@@ -1,7 +1,71 @@
-import React from "react";
+"use client";
+
+import { Skeleton } from "@/components/ui/skeleton";
+import { TProduct } from "@/lib/types";
+import { getAllProducts } from "@/services/products";
+import { useQuery } from "@tanstack/react-query";
+import { ChevronRightIcon } from "lucide-react";
+import Link from "next/link";
+import DestinationCard from "./destination-card";
+
+const getProducts = async () => {
+  const res: {
+    data: TProduct[];
+  } = await getAllProducts();
+  return res.data;
+};
 
 const Destination = () => {
-  return <div>Destination</div>;
+  const { data, isError, isLoading } = useQuery({
+    queryKey: ["Products"],
+    queryFn: getProducts,
+  });
+
+  if (isLoading) {
+    return (
+      <div className="container">
+        <div className="flex flex-col gap-4">
+          <Skeleton className="w-full h-48" />
+          <Skeleton className="w-full h-48" />
+          <Skeleton className="w-full h-48" />
+        </div>
+      </div>
+    );
+  }
+  if (isError) {
+    return <div className="text-center">Tidak ada Data.</div>;
+  }
+  return (
+    <div className="container">
+      <div className="flex items-center gap-4">
+        <h3 className="text-3xl text-center lg:text-start text-primary-500 font-bold font-unbounded">
+          Destinations
+        </h3>
+        <Link className="text-primary-500 flex items-center gap-2" href={"/"}>
+          <div className="rounded-full border border-primary-500">
+            <ChevronRightIcon className="w-8 h-8" strokeWidth={1} />
+          </div>{" "}
+          EXPLORE MORE
+        </Link>
+      </div>
+
+      <div className="flex flex-col gap-40 mt-8">
+        {data?.map((item, index) => (
+          <DestinationCard
+            index={index}
+            key={item.itinerary_id}
+            id={item.itinerary_id}
+            day={item.itinerary_day}
+            images={item.related_galleries}
+            description={item.itinerary_short_description}
+            partner={item.partner_name}
+            title={item.itinerary_name}
+            price={item.related_variant.itinerary_variant_pub_price}
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Destination;
