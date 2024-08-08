@@ -33,7 +33,7 @@ const Page = () => {
       </div>
       <div className="container mt-20">
         <div
-          className="flex justify-between py-8 px-4 relative"
+          className="flex flex-col md:flex-row items-center justify-between py-8 px-4 relative gap-3"
           style={{
             backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0.36) 100%), url('/assets/images/img-background.png')`,
             width: "100%",
@@ -51,13 +51,13 @@ const Page = () => {
             sizes="30vw"
           />
           <div className="flex flex-col text-basic-100">
-            <span>
+            <span className="text-center md:text-start">
               Want to see other destinations? Check us out at our website
             </span>
             <Link
               href={"https://pandooin.com"}
               target="_blank"
-              className="flex items-center gap-1 text-end w-full justify-end font-medium text-xl underline"
+              className="flex items-center gap-1 text-center md:text-end w-full justify-center md:justify-end font-medium text-xl underline"
             >
               pandooin.com <ArrowUpRightIcon className="w-6 h-6" />
             </Link>

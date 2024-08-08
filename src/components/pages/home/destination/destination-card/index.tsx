@@ -50,7 +50,7 @@ const DestinationCard: FC<Props> = ({
         <div className="flex items-end justify-between gap-3 w-full">
           <div className="flex flex-col">
             <span className="text-primary-500">Start From</span>
-            <span className="font-unbounded text-2xl font-medium text-primary-400">
+            <span className="font-unbounded text-lg md:text-2xl font-medium text-primary-400">
               IDR {Number(price).toLocaleString()}
             </span>
           </div>

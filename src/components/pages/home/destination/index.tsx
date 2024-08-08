@@ -21,35 +21,18 @@ const Destination = () => {
     queryFn: getProducts,
   });
 
-  if (isLoading) {
-    return (
-      <div className="container">
-        <div className="flex flex-col gap-4">
-          <Skeleton className="w-full h-48" />
-          <Skeleton className="w-full h-48" />
-          <Skeleton className="w-full h-48" />
-        </div>
-      </div>
-    );
-  }
-  if (isError) {
-    return <div className="text-center">Tidak ada Data.</div>;
-  }
-  return (
+  const loadingComponents = () => (
     <div className="container">
-      <div className="flex items-center gap-4">
-        <h3 className="text-3xl text-center lg:text-start text-primary-500 font-bold font-unbounded">
-          Destinations
-        </h3>
-        <Link
-          className="text-primary-500 font-semibold flex items-center gap-2 transition-colors hover:text-secondary-400"
-          href={"/"}
-        >
-          <ChevronRightCircleIcon className="w-8 h-8" />
-          EXPLORE MORE
-        </Link>
+      <div className="flex flex-col gap-4">
+        <Skeleton className="w-full h-48" />
+        <Skeleton className="w-full h-48" />
+        <Skeleton className="w-full h-48" />
       </div>
+    </div>
+  );
 
+  const mainComponents = () => (
+    <>
       <div className="flex flex-col gap-40 mt-8">
         {data?.map((item, index) => (
           <DestinationCard
@@ -66,12 +49,33 @@ const Destination = () => {
         ))}
       </div>
       <Link
-        className="text-primary-500 font-semibold flex items-center gap-2 transition-colors hover:text-secondary-400 ms-auto w-fit mt-20"
+        className="text-primary-500 font-semibold flex items-center gap-2 transition-colors hover:text-secondary-400 mx-auto lg:ms-auto w-fit mt-20"
         href={"/"}
       >
         <ChevronRightCircleIcon className="w-8 h-8" />
         EXPLORE MORE
       </Link>
+    </>
+  );
+
+  if (isError) {
+    return <div className="text-center">Tidak ada Data.</div>;
+  }
+  return (
+    <div className="container">
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <h3 className="text-3xl text-center lg:text-start text-primary-500 font-bold font-unbounded">
+          Destinations
+        </h3>
+        <Link
+          className="text-primary-500 font-semibold flex items-center gap-2 transition-colors hover:text-secondary-400"
+          href={"/"}
+        >
+          <ChevronRightCircleIcon className="w-8 h-8" />
+          EXPLORE MORE
+        </Link>
+      </div>
+      {isLoading ? loadingComponents() : mainComponents()}
     </div>
   );
 };

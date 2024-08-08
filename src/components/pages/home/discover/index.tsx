@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Discover = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-0 justify-center">
+    <div className="container flex flex-col lg:flex-row items-center gap-0 justify-center">
       <Image
         src="/assets/icons/ic-discover-tailored-experiences.svg"
         width={300}
@@ -12,7 +12,7 @@ const Discover = () => {
         alt="discover-ic"
         className=""
       />
-      <div className="flex flex-col w-1/2">
+      <div className="flex flex-col w-full lg:w-1/2">
         <h3 className="text-3xl text-center lg:text-start text-primary-500 font-bold font-unbounded">
           Discover Tailored Experiences
         </h3>
