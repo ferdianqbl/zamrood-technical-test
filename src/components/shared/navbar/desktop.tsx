@@ -16,6 +16,7 @@ type Props = {
 
 const NavbarDesktop: FC<Props> = ({ scrollY, data }) => {
   const pathname = usePathname();
+  const hash = window && window.location.hash ? window.location.hash : null;
   return (
     <div className="container hidden lg:flex items-center justify-between">
       <Link href="/" className="block">
@@ -42,9 +43,9 @@ const NavbarDesktop: FC<Props> = ({ scrollY, data }) => {
             className={cn(
               "py-4 text-basic-100 hover:font-medium transition-all duration-300",
               scrollY > 0 && "text-primary-400",
-              pathname + window.location.hash === item.url &&
+              pathname + hash === item.url &&
                 "font-medium border-b-2 border-basic-100",
-              pathname + window.location.hash === item.url &&
+              pathname + hash === item.url &&
                 scrollY > 0 &&
                 "font-medium border-b-2 border-primary-400"
             )}

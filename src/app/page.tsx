@@ -3,6 +3,7 @@ import Destination from "@/components/pages/home/destination";
 import Discover from "@/components/pages/home/discover";
 import Experience from "@/components/pages/home/experience";
 import Hero from "@/components/pages/home/hero";
+import LuxuryFootages from "@/components/pages/home/luxury-footages";
 import { ArrowUpRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,8 +29,11 @@ const Page = () => {
           className="mx-auto"
         />
       </div>
-      <div className="pt-28" id="destination">
+      <div className="py-28" id="destination">
         <Destination />
+      </div>
+      <div className="py-28 bg-secondary-400" id="luxury">
+        <LuxuryFootages />
       </div>
       <div className="container mt-20">
         <div className="flex flex-col md:flex-row items-center justify-between py-8 px-4 relative gap-3 information-image">

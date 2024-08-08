@@ -20,6 +20,7 @@ type Props = {
 const NavbarMobile: FC<Props> = ({ scrollY, data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const hash = window && window.location.hash ? window.location.hash : null;
 
   return (
     <div className="lg:hidden container flex items-center justify-between w-full gap-3">
@@ -55,7 +56,7 @@ const NavbarMobile: FC<Props> = ({ scrollY, data }) => {
                 href={item.url}
                 className={cn(
                   "text-primary-400 hover:font-medium transition-all duration-300",
-                  pathname + window.location.hash === item.url &&
+                  pathname + hash === item.url &&
                     "font-medium border-b-2 border-primary-400"
                 )}
                 onClick={() => setIsOpen(false)}
