@@ -7,7 +7,7 @@ import {
 import { TProductGallery } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 type Props = {
   images: TProductGallery[];
@@ -15,6 +15,13 @@ type Props = {
 
 const DestinationImageCarousel: FC<Props> = ({ images }) => {
   const [idxImg, setIdxImg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIdxImg((prevIdx) => prevIdx + 1);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative lg:w-1/2 max-h-[256px] lg:max-h-[327px] aspect-video h-full">
@@ -30,8 +37,8 @@ const DestinationImageCarousel: FC<Props> = ({ images }) => {
               idxImg === index && "opacity-100"
             )}
             sizes="100vw"
-            loading="lazy"
-            decoding="async"
+            loading="eager"
+            // decoding="async"
           />
         </div>
       ))}
