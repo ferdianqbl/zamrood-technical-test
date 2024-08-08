@@ -12,7 +12,10 @@ const ArticleCard: FC<Partial<TArticle>> = ({
   title,
 }) => {
   return (
-    <Link href={"/"} className="w-full flex flex-col">
+    <Link
+      href={"/"}
+      className="w-full flex flex-col relative overflow-hidden article-card"
+    >
       <div className="relative w-full h-full aspect-video overflow-hidden">
         <Image
           src={featured_image ?? ""}
@@ -23,8 +26,8 @@ const ArticleCard: FC<Partial<TArticle>> = ({
           decoding="async"
         />
       </div>
-      <div className="bg-primary-400 p-4">
-        <h4 className="m-0 text-basic-100 text-base font-bold line-clamp-2">
+      <div className="absolute bg-primary-400 -bottom-96 w-full p-2 article-title transition-all duration-300">
+        <h4 className="m-0 text-basic-100 text-sm font-bold line-clamp-2">
           {title}
         </h4>
       </div>

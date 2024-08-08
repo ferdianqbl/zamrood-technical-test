@@ -99,3 +99,11 @@ html {
   background-size: cover;
   background-position: center;
 }
+
+.article-card:hover img {
+  @apply grayscale-0 transition-all ease-in-out duration-300 scale-105;
+}
+
+.article-card:hover .article-title {
+  @apply bottom-0;
+}
