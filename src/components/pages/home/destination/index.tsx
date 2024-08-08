@@ -49,7 +49,7 @@ const Destination = () => {
         ))}
       </div>
       <Link
-        className="text-primary-500 font-semibold flex items-center gap-2 transition-colors hover:text-secondary-400 mx-auto lg:ms-auto w-fit mt-20"
+        className="text-primary-500 font-semibold flex items-center gap-2 transition-colors hover:text-secondary-400 mx-auto lg:me-0 lg:ms-auto w-fit mt-20"
         href={"/"}
       >
         <ChevronRightCircleIcon className="w-8 h-8" />
