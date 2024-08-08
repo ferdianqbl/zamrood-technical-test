@@ -3,12 +3,19 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 type Props = {
   scrollY: number;
+  data: {
+    id: number;
+    name: string;
+    url: string;
+  }[];
 };
 
-const NavbarDesktop: FC<Props> = ({ scrollY }) => {
+const NavbarDesktop: FC<Props> = ({ scrollY, data }) => {
+  const pathname = usePathname();
   return (
     <div className="container hidden lg:flex items-center justify-between">
       <Link href="/" className="block">
@@ -29,27 +36,22 @@ const NavbarDesktop: FC<Props> = ({ scrollY }) => {
           scrollY > 0 && "text-primary-400"
         )}
       >
-        <Link
-          href="/#home-hero"
-          className={cn(
-            "border-b border-basic-100 py-4 font-medium",
-            scrollY > 0 && "border-primary-400"
-          )}
-        >
-          Homepage
-        </Link>
-        <Link
-          href="/#tailored-experiences"
-          className="py-4 hover:border-b hover:border-basic-100"
-        >
-          Customize Your Trip
-        </Link>
-        <Link href="/destination" className="py-4">
-          Destination
-        </Link>
-        <Link href="/#article" className="py-4">
-          Article
-        </Link>
+        {data.map((item) => (
+          <Link
+            href={item.url}
+            className={cn(
+              "py-4 text-basic-100 hover:font-medium transition-all duration-300",
+              scrollY > 0 && "text-primary-400",
+              pathname + window.location.hash === item.url &&
+                "font-medium border-b-2 border-basic-100",
+              pathname + window.location.hash === item.url &&
+                scrollY > 0 &&
+                "font-medium border-b-2 border-primary-400"
+            )}
+          >
+            {item.name}
+          </Link>
+        ))}
         <Link href="/t">
           <Button
             className={cn(

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import NavbarDesktop from "./desktop";
 import NavbarMobile from "./mobile";
 import { cn } from "@/lib/utils";
+import NavData from "./navbar-data.json";
 
 const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -27,8 +28,8 @@ const Navbar = () => {
         scrollY > 0 && "bg-white shadow-md"
       )}
     >
-      <NavbarDesktop scrollY={scrollY} />
-      <NavbarMobile scrollY={scrollY} />
+      <NavbarDesktop scrollY={scrollY} data={NavData} />
+      <NavbarMobile scrollY={scrollY} data={NavData} />
     </nav>
   );
 };

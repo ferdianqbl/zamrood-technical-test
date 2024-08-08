@@ -13,13 +13,13 @@ const Page = () => {
       <section className="hero-image w-full min-h-screen" id="home_hero">
         <Hero />
       </section>
-      <section className="pt-20" id="home_experience">
+      <section className="pt-28" id="home_experience">
         <Experience />
       </section>
-      <section className="pt-20" id="home_discover">
+      <section className="pt-28" id="home_discover">
         <Discover />
       </section>
-      <div className="pt-20">
+      <div className="pt-28">
         <Image
           src="/assets/icons/ic-separator.svg"
           width={1000}
@@ -28,7 +28,7 @@ const Page = () => {
           className="mx-auto"
         />
       </div>
-      <div className="pt-20">
+      <div className="pt-28" id="destination">
         <Destination />
       </div>
       <div className="container mt-20">
@@ -55,7 +55,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="py-20">
+      <div className="py-28" id="articles">
         <Articles />
       </div>
     </main>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Homepage",
+    "url": "/#home_hero"
+  },
+  {
+    "id": 2,
+    "name": "Customize Your Trip",
+    "url": "/#home_discover"
+  },
+  {
+    "id": 3,
+    "name": "Destination",
+    "url": "/#destination"
+  },
+  {
+    "id": 4,
+    "name": "Article",
+    "url": "/#articles"
+  }
+]
