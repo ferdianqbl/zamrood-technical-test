@@ -18,13 +18,13 @@ const DestinationImageCarousel: FC<Props> = ({ images }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIdxImg((prevIdx) => prevIdx + 1);
+      setIdxImg((prevIdx) => (prevIdx >= 6 ? 0 : prevIdx + 1));
     }, 2000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative lg:w-1/2 max-h-[256px] lg:max-h-[327px] aspect-video h-full">
+    <div className="relative lg:w-1/2">
       {images?.map((item, index) => (
         <div className="absolute h-full w-full">
           <Image

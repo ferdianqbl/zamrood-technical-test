@@ -6,7 +6,9 @@ const Footer = () => {
   return (
     <footer className="py-10 bg-primary-500 text-basic-100">
       <div className="container flex flex-col lg:flex-row items-center gap-3 justify-between">
-        <span>&copy; 2023 Zamrood by PT Teknologi Pandu Wisata</span>
+        <span className="text-sm sm:text-base text-center lg:text-start">
+          &copy; 2023 Zamrood by PT Teknologi Pandu Wisata
+        </span>
         <div className="flex items-center gap-4">
           <Link href={"/"}>
             <Image
