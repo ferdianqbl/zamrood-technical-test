@@ -30,3 +30,12 @@ export type TProduct = {
   related_galleries: TProductGallery[];
   related_variant: TProductVariant;
 };
+
+export type TArticle = {
+  id: string;
+  slug: string;
+  title: string;
+  featured_image: string;
+  featured_image_caption: string;
+  read_time: string;
+};
