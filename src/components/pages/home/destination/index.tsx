@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { TProduct } from "@/lib/types";
 import { getAllProducts } from "@/services/products";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightCircleIcon, ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import DestinationCard from "./destination-card";
 
@@ -41,10 +41,11 @@ const Destination = () => {
         <h3 className="text-3xl text-center lg:text-start text-primary-500 font-bold font-unbounded">
           Destinations
         </h3>
-        <Link className="text-primary-500 flex items-center gap-2" href={"/"}>
-          <div className="rounded-full border border-primary-500">
-            <ChevronRightIcon className="w-8 h-8" strokeWidth={1} />
-          </div>{" "}
+        <Link
+          className="text-primary-500 font-semibold flex items-center gap-2 transition-colors hover:text-secondary-400"
+          href={"/"}
+        >
+          <ChevronRightCircleIcon className="w-8 h-8" />
           EXPLORE MORE
         </Link>
       </div>
@@ -64,6 +65,13 @@ const Destination = () => {
           />
         ))}
       </div>
+      <Link
+        className="text-primary-500 font-semibold flex items-center gap-2 transition-colors hover:text-secondary-400 ms-auto w-fit mt-20"
+        href={"/"}
+      >
+        <ChevronRightCircleIcon className="w-8 h-8" />
+        EXPLORE MORE
+      </Link>
     </div>
   );
 };
