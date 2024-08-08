@@ -27,7 +27,7 @@ const ArticleCard: FC<Partial<TArticle>> = ({
         />
       </div>
       <div className="absolute bg-primary-400 -bottom-96 w-full p-2 article-title transition-all duration-300">
-        <h4 className="m-0 text-basic-100 text-sm font-bold line-clamp-2">
+        <h4 className="m-0 text-basic-100 text-sm md:text-base font-bold line-clamp-2">
           {title}
         </h4>
       </div>

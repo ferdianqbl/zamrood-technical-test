@@ -33,7 +33,7 @@ const Destination = () => {
 
   const mainComponents = () => (
     <>
-      <div className="flex flex-col gap-40 mt-8">
+      <div className="flex flex-col gap-10 md:gap-40 mt-8">
         {data?.map((item, index) => (
           <DestinationCard
             index={index}
