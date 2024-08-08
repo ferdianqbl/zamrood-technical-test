@@ -22,7 +22,7 @@ const Destination = () => {
   });
 
   const loadingComponents = () => (
-    <div className="container">
+    <div className="container mt-8">
       <div className="flex flex-col gap-4">
         <Skeleton className="w-full h-48" />
         <Skeleton className="w-full h-48" />
@@ -58,9 +58,6 @@ const Destination = () => {
     </>
   );
 
-  if (isError) {
-    return <div className="text-center">Tidak ada Data.</div>;
-  }
   return (
     <div className="container">
       <div className="flex flex-col md:flex-row items-center gap-4">
@@ -75,7 +72,13 @@ const Destination = () => {
           EXPLORE MORE
         </Link>
       </div>
-      {isLoading ? loadingComponents() : mainComponents()}
+      {isLoading ? (
+        loadingComponents()
+      ) : isError ? (
+        <div className="text-center">Tidak ada Data.</div>
+      ) : (
+        mainComponents()
+      )}
     </div>
   );
 };

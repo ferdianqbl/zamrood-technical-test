@@ -13,7 +13,7 @@ const ArticleCard: FC<Partial<TArticle>> = ({
 }) => {
   return (
     <Link href={"/"} className="w-full flex flex-col">
-      <div className="lg:relative w-full h-full aspect-video overflow-hidden">
+      <div className="relative w-full h-full aspect-video overflow-hidden">
         <Image
           src={featured_image ?? ""}
           className="object-cover object-center grayscale hover:grayscale-0 transition-all ease-in-out duration-300 absolute w-full h-full"
