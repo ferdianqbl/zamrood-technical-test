@@ -1,9 +1,4 @@
 "use client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import { TProductGallery } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
