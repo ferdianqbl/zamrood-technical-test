@@ -19,7 +19,7 @@ const DestinationImageCarousel: FC<Props> = ({ images }) => {
   }, []);
 
   return (
-    <div className="relative lg:w-1/2">
+    <div className="relative aspect-video lg:aspect-auto lg:w-1/2">
       {images?.map((item, index) => (
         <div className="absolute h-full w-full">
           <Image
@@ -32,8 +32,8 @@ const DestinationImageCarousel: FC<Props> = ({ images }) => {
               idxImg === index && "opacity-100"
             )}
             sizes="100vw"
-            loading="eager"
-            // decoding="async"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       ))}
