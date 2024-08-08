@@ -32,7 +32,7 @@ const Page = () => {
       <div className="py-28" id="destination">
         <Destination />
       </div>
-      <div className="py-28 bg-secondary-400" id="luxury">
+      <div className="py-16 bg-secondary-400" id="luxury">
         <LuxuryFootages />
       </div>
       <div className="container mt-20">
