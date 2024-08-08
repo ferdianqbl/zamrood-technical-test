@@ -32,16 +32,7 @@ const Page = () => {
         <Destination />
       </div>
       <div className="container mt-20">
-        <div
-          className="flex flex-col md:flex-row items-center justify-between py-8 px-4 relative gap-3"
-          style={{
-            backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0.36) 100%), url('/assets/images/img-background.png')`,
-            width: "100%",
-            height: "100%",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
+        <div className="flex flex-col md:flex-row items-center justify-between py-8 px-4 relative gap-3 information-image">
           <Image
             src={"/assets/icons/ic-company-logo.svg"}
             alt="ic-company"
